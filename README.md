@@ -1,8 +1,7 @@
-# Virtual Drum System — OpenCV-Based Real-Time Gesture Recognition
+# Virtual Drum System using OpenCV-Based Real-Time Gesture Recognition
 
 **Course:** Computer Vision | BINUS University  
-**Authors:** Jerome Maxcellino Budianto (2802412894) · Hibatullah Fawwaz Hana (2802485271)  
-**Version:** 1.0
+**Authors:** Jerome Maxcellino Budianto (2802412894)
 
 ---
 
@@ -10,7 +9,7 @@
 
 A virtual drum simulator that uses your webcam and a bright-colored marker (e.g., green tape wrapped around a pen or chopstick) to play drum sounds in real-time. No special hardware required — runs on any laptop with a standard webcam.
 
-**Pipeline:** Webcam → BGR→HSV → Color Mask → Morphological Clean-up → Contour Detection → Centroid → Collision with ROI → Audio Trigger
+**Pipeline:** Webcam -> BGR→HSV -> Color Mask -> Morphological Clean-up -> Contour Detection -> Centroid -> Collision with ROI -> Audio Trigger
 
 ---
 
@@ -49,12 +48,12 @@ python virtual_drum.py
 
 ```
 ┌───────────────────────────────────────────────────────────────┐
-│  [Crash Cymbal]      [Tom-Tom]           [Snare]             │
+│  [hi hat]      [snare]           [tom]                         │
 │  x: 10–195  y: 20–175   x: 215–420 y: 20–175   x: 440–630 y: 20–175  │
 │                                                               │
 │               (swing area — move marker through zones)        │
 │                                                               │
-│          [Hi-Hat / Bass  —  x: 10–630  y: 295–460]           │
+│          [Bass  —  x: 10–630  y: 295–460]                      │
 └───────────────────────────────────────────────────────────────┘
 ```
 
