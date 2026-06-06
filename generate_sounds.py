@@ -20,17 +20,14 @@ def _write_wav(path: str, samples: np.ndarray) -> None:
 
 
 def _make_kick(duration: float = 0.6) -> np.ndarray:
-    """bass punch: pitch drops 150 → 40 Hz + low thump."""
     t     = np.linspace(0, duration, int(SAMPLE_RATE * duration), endpoint=False)
     freqs = np.linspace(150, 40, len(t))
     phase = np.cumsum(2 * math.pi * freqs / SAMPLE_RATE)
     tone  = np.sin(phase)
-    # Hard transient click on attack
     click = np.random.default_rng(0).uniform(-1.0, 1.0, len(t)) * np.exp(-80 * t)
     env   = np.exp(-6.0 * t)
     return (tone * 0.85 + click * 0.2) * env
 
-#snare
 def _make_snare(duration: float = 0.3) -> np.ndarray:
     t     = np.linspace(0, duration, int(SAMPLE_RATE * duration), endpoint=False)
     tone  = np.sin(2 * math.pi * 180 * t) * 0.35
@@ -38,7 +35,6 @@ def _make_snare(duration: float = 0.3) -> np.ndarray:
     env   = np.exp(-13.0 * t)
     return (tone + noise) * env * 0.82
 
-#hihat
 def _make_hihat(duration: float = 0.12) -> np.ndarray:
     t     = np.linspace(0, duration, int(SAMPLE_RATE * duration), endpoint=False)
     noise = np.random.default_rng(2).uniform(-1.0, 1.0, len(t))
@@ -46,7 +42,6 @@ def _make_hihat(duration: float = 0.12) -> np.ndarray:
     env   = np.exp(-25.0 * t)
     return (noise * 0.55 + hf) * env * 0.72
 
-#tom
 def _make_tom(duration: float = 0.5) -> np.ndarray:
     t     = np.linspace(0, duration, int(SAMPLE_RATE * duration), endpoint=False)
     freqs = np.linspace(120, 55, len(t))
@@ -66,7 +61,7 @@ def main() -> None:
     _write_wav(os.path.join(out_dir, "snare.wav"), _make_snare())
     _write_wav(os.path.join(out_dir, "hihat.wav"), _make_hihat())
     _write_wav(os.path.join(out_dir, "tom.wav"),   _make_tom())
-    print("Don")
+    print("Done")
 
 
 if __name__ == "__main__":
