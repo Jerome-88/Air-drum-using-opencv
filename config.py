@@ -36,7 +36,7 @@ LANES: List[Dict] = [
     {
         "id": "hihat",
         "label": "Hi-Hat",
-        "sound": "sounds/hihat.wav",
+        "sound": "sounds/hihat.mp3",
         "pad": (10, 20, 205, 185),
         "icon": "hihat",
         "color": (40, 205, 230),
@@ -45,7 +45,7 @@ LANES: List[Dict] = [
     {
         "id": "snare",
         "label": "Snare",
-        "sound": "sounds/snare.wav",
+        "sound": "sounds/snare.mp3",
         "pad": (225, 20, 415, 185),
         "icon": "snare",
         "color": (245, 130, 55),
@@ -54,7 +54,7 @@ LANES: List[Dict] = [
     {
         "id": "tom",
         "label": "Tom",
-        "sound": "sounds/tom.wav",
+        "sound": "sounds/tom.mp3",
         "pad": (435, 20, 630, 185),
         "icon": "tom",
         "color": (210, 95, 210),
@@ -63,7 +63,7 @@ LANES: List[Dict] = [
     {
         "id": "kick",
         "label": "Kick",
-        "sound": "sounds/kick.wav",
+        "sound": "sounds/kick.mp3",
         "pad": (10, 295, 630, 460),
         "icon": "kick",
         "color": (55, 65, 245),

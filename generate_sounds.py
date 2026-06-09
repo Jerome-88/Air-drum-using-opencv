@@ -19,14 +19,14 @@ def _write_wav(path: str, samples: np.ndarray) -> None:
     print(f"Created {path}")
 
 
-def _make_kick(duration: float = 0.6) -> np.ndarray:
+def _make_kick(duration: float = 0.5) -> np.ndarray:
     t     = np.linspace(0, duration, int(SAMPLE_RATE * duration), endpoint=False)
-    freqs = np.linspace(150, 40, len(t))
+    freqs = np.linspace(220, 28, len(t))
     phase = np.cumsum(2 * math.pi * freqs / SAMPLE_RATE)
     tone  = np.sin(phase)
-    click = np.random.default_rng(0).uniform(-1.0, 1.0, len(t)) * np.exp(-80 * t)
-    env   = np.exp(-6.0 * t)
-    return (tone * 0.85 + click * 0.2) * env
+    click = np.random.default_rng(0).uniform(-1.0, 1.0, len(t)) * np.exp(-60 * t)
+    env   = np.exp(-9.0 * t)
+    return (tone * 0.85 + click * 0.45) * env
 
 def _make_snare(duration: float = 0.3) -> np.ndarray:
     t     = np.linspace(0, duration, int(SAMPLE_RATE * duration), endpoint=False)
@@ -44,11 +44,11 @@ def _make_hihat(duration: float = 0.12) -> np.ndarray:
 
 def _make_tom(duration: float = 0.5) -> np.ndarray:
     t     = np.linspace(0, duration, int(SAMPLE_RATE * duration), endpoint=False)
-    freqs = np.linspace(120, 55, len(t))
+    freqs = np.linspace(180, 75, len(t))
     phase = np.cumsum(2 * math.pi * freqs / SAMPLE_RATE)
     tone  = np.sin(phase)
     noise = np.random.default_rng(3).uniform(-1.0, 1.0, len(t)) * 0.06
-    env   = np.exp(-7.5 * t)
+    env   = np.exp(-5.5 * t)
     return (tone + noise) * env * 0.85
 
 
