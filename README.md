@@ -1,7 +1,13 @@
 # Virtual Drum Hero
 
 **Course:** Computer Vision | BINUS University  
-**Authors:** Jerome Maxcellino Budianto (2802412894), Hibatullah Fawwaz Hana (2802485271)
+**Authors:**
+- Jerome Maxcellino Budianto (2802412894)
+- Hibatullah Fawwaz Hana (2802485271)
+- Andrew Christiansho (2802515942)
+- Kevin Kartanegara (2802526416)
+- Ritchjhie Agusta (2802529102)
+- Randy Fathoni (2802504604)
 
 Virtual Drum Hero is a webcam-based drum rhythm game inspired by Guitar Hero. The default game shows four vertical drum lanes with notes falling toward hit zones. A separate new-layout version is also included with oval drum pads and a centered rhythm staff.
 
